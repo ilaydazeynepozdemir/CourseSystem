@@ -1,0 +1,80 @@
+DETAIL SYSTEM REQUIREMENTS
+Ilayda Zeynep Ozdemir
+131044022
+
+CourseSystem adli bir sistem olusturuluyor ve icerisinde bir tane admin bulundurabiliyor.
+
+Bir tane admin olusturuluyor ve systemInstallation methoduyla sistemi yukleyerek kendisine sistemi sisteme de kendisini tanimliyor.
+Admin = 
+Admin zamanda Yetkili(Authorized)
+sisteme kullanici ders ekleme cikarma yapabiliyor
+sisteme kayit olabiliyor
+ogretmenleri derslere gorevlendiriyor
+sistemden cikmak istiyor ve sistemi silebiliyor
+
+
+Teacher=
+Derse kullanici ekleme cikarma yapabiliyor
+silinen dersleri listeleyebiliyor/gorebiliyor ama uzerinde oynama yapamiyor cunku o dersler sonradan constant oluyor
+derslerine tutor ekleme/cikarma yapabiliyor
+derslerine document ekleme cikarma yapabiliyor
+dersindeki ogrencilere odev verebiliyor ve deadline sahip bu odevlerin deadlinelarini degistirebiliyor
+ogrencilerin upload ettikleri odevleri notlandiriyor
+odev notlandirmada onemli olan deadline ve latedeadlinedan once yuklenmis olmasi 
+-(latedeadlinedan sonra yuklenir 0 alir)
+-(latedeadline zamaninda yuklenirse 60 alir)
+-(deadline zamaninda yuklenirse 100 alr)
+upload edilen odevleri listeleyebiliyor
+tutor ve dersindeki kullanicilari listeleyebiliyor 
+Dersten veya sistemden cikabiliyor
+
+Student=
+Notlarini goruntuleyebiliyor
+Ogretmen tarafindan derse odev eklendiyse odev upload edebiliyor 
+sistemden cikabiliyor(admin cikarirsa)
+dersten cikabiliyor(ogretmen cikarirsa)
+derse eklenen dokumanlari gorebiliyor
+
+Tutor=
+Tutor oldugu derse odev yukleyemiyor ama kendi derslerine odev yukleyebiliyor
+silinen dersleri goruntuleyebiliyor ama degisiklik yapamaz
+bunlarin disinda ogrenci olarak davranir
+
+Course=
+icinde kayitli ogrencilerin odevlerini yukleyebildigi bir assignmen arrayListi tutan arraylisti var 
+kendisine kayitli olan ogrencileri tutan bir array var
+yoneten konumunda olan bir ogretmen tutuyor
+o derste tutor olanlarin arraylisti var
+eklenen documanlari tutan bir document arraylisti var 
+bir tane de eger onu yoneten ogretmen cikmak isterse diye boolean bir uyesi var 
+(ogretmen dersi birakmak istediginde bu boolean uye true oluyor ve admin kontrolunde ogretmen dersten cikariliyor)
+
+Assignment=
+Deadline tipinde bir uyesi var ( deadline classi = deadline ve latedeadline'i tutuyor)
+
+
+
+
+
+
+
+
+User abstract class'indan tureyen buyun kullanicilar registeredSystem fonksiyonunu cagirabiliyor
+Admin cagirdigi zaman otomatik olarak sistem yukleniyor ya da admin olusturulurken sistem yollanirsa admin otomatik sistemi yukluyor
+sistem ve admin iliskisi kurulduktan sonra admin tum ullanicilari sisteme ekliyor
+ya da kullanicilar kendini sisteme kaydettiginde admin araciligiyla gerceklestiriliyor
+admin dersleri de sisteme ekledikten sonra ogretmenleri derslere atama islemlerini yapiyor 
+ve ogretmenler atandiklari derslerin yetkilileri oluyorlar
+adminlerin sisteme kullanici ekleyip cikardiklari gibi ogretmenler de derslere kullanici ekleyip cikarabiliyorlar
+bu add ve remove fonksiyonlari Authorized(Yetkili) abstract classina ait
+Ogretmenler derslere assignment'lar yukleyebiliyor
+Bu assignment'lar ogrenciler tarafindan goruluyor
+Ogrenciler ise yapilan assignmentlari derslere ekliyorlar
+Ogrenciler tarafindan yuklenen assignmentlar dersin ogretmeni tarafindan da degerlendiriliyor
+Ve ogrencilerin yukledikleri assignmentlara notlar veriliyor
+Ogrenciler bu notlari goruntuleyebiliyor
+Ogretmenler birden fazla dersi yonetebiliyorlar
+Admin tarafindan silinen dersleri ogretmen ve tutorlarin goruntuleme yetkileri var ama uzerlerinde degisiklik yapma yetkileri yok
+Tutorlar ogrencilerden turedikleri icin ogrenci gibi davranabilirler
+Ogrenciler sisteme kayit olup assignment yukleyebilirler
+

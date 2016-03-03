@@ -1,0 +1,25 @@
+PROBLEM SOLUTION
+Ilayda Zeynep Ozdemir
+131044022
+
+dersleri interface bir classtan ve constant dersleri interfaceConstantCourse classindan turettim
+dersleri bir tane constant interfaceden turettim set yapmayi engellemek icin
+constant olan derslerde set yapilmaya calisirsa hata firlatiliyor ve sonra yakalanip bu derse ekleme yapilamaz deniyor
+diger courseda ise bu setleri override ederek normal set fonksiyonlari olarak kullandim
+
+kullanicilar userdan yetkili ve yetkisiz iki abstract sinif olarak turetildi. 
+yetkililer admin ve ogretmen oldular cunku onlarda belirli seyleri yonetme yetenegi var 
+ogretmen icinde dersler var ve o derslerin basinda bulunuyor.Ayni zamanda az yetki (LessAuthority) interface'inden implemen edildi
+admin icinde ise sistem var ve o sistemin basinda duruyor
+yetkisizler ise ogrenci ve ondan tureyen tutor
+ogrencinin tek yapabildigi notlari goruntulemek,verilen odevi yapip yuklemek
+tutor ise ogrenciden ek olarak az yetki (LessAuthority) interface'inden implemen edildi
+Bu implementin nedeni silinen dersleri goruntuleyebiliyor olmasi
+tutor studenttan turetildi cunku tutor olmasina ragmen kendisi baska derslerde ogrenci olarak devam ediyor
+eski derleri goruntuleyebilmek icin tutor ve teacherda implement ettim
+
+homework groupProjelerini de assignment abstract classindan turetilmesi gerekiyordu
+
+Myexception'i da exception classindan turettim odevin bi cok yerinde myexception hatasi firlatarak onlari yakaalyip mesajlarini ekrana bastirdim
+
+
